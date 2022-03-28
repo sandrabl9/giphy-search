@@ -1,6 +1,8 @@
 
 import './App.css';
 import ListOfGifs from './components/ListOfGifs';
+import Home from './pages/Home/index';
+import logo from './logo2.png';
 import { Link, Route } from "wouter";
 
 
@@ -9,13 +11,15 @@ function App() {
 
   return (
     <div className='App'>
-      <Link to='/gif/hola'> Gif hola</Link>
-      <Link to='/gif/rick'> Gif rick</Link>
-      <Link to='/gif/sun'> Gif sun</Link>
-      <Link to='/gif/peru'> Gif peru</Link>
-      
       <section className='App-content'>
-        <Route path='/gif/:keyword' 
+        <Link to='/'>
+          <img className='logo' alt='sandra-logo' src={logo} />
+        </Link>
+        <Route 
+        component={Home}
+        path='/' />
+        
+        <Route path='/search/:keyword' 
         component={ ListOfGifs } />
       </section>
     </div>

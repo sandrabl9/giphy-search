@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  margin-top: 30px;
+  
 }
 
 .App-content {
@@ -7,8 +9,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+ 
 }
-
+.logo {
+  width: 20%;
+}
 a{
   display: block;
 }
