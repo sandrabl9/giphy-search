@@ -1,3 +1,14 @@
 .App {
   text-align: center;
 }
+
+.App-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+a{
+  display: block;
+}

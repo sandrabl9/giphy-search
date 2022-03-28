@@ -1,27 +1,30 @@
-import { useState, useEffect } from 'react';
-import getGifs from '../services/getGifs';
-import Gif from './Gif';
+import { useState, useEffect } from "react";
+import getGifs from "../services/getGifs";
+import Gif from "./Gif";
+import "./ListOfGifs.css";
 
-const ListOfGifs = ( {keyword}) => {
-    const [gifs, setGifs] = useState([]);
+const ListOfGifs = ({ params }) => {
+  const { keyword } = params;  
+  const [gifs, setGifs] = useState([]);
 
-    useEffect(function () {
-      getGifs({ keyword }).then(gifs => setGifs(gifs))
-    }, [keyword]);
-  
-  
+  useEffect(
+    function () {
+      getGifs({ keyword }).then((gifs) => setGifs(gifs));
+    },
+    [keyword]
+  );
 
-    return (
-        <div>
-        { gifs.map(gif => 
-        <Gif
+  return (
+    <div className="card">
+      {gifs.map((gif) => (
+        <Gif 
         id={gif.id} 
         key={gif.id} 
         title={gif.title} 
-        url={gif.url} 
-         />)}
-        </div>
-    )
+        url={gif.url} />
+      ))}
+    </div>
+  );
 };
 
 export default ListOfGifs;
