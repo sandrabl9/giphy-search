@@ -3,7 +3,7 @@ const apiKey = 'DerYrQjZr78zmR2kpLRlFrRjzYwMUQAT';
 
 
 const getGifs = ({keyword = 'apple'} = {}) => {
-    const apiURL = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keyword}&limit=10&offset=0&rating=g&lang=en`;
+    const apiURL = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${keyword}&limit=6&offset=0&rating=g&lang=en`;
 
    return fetch(apiURL)
     .then(res => res.json())
