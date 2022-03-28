@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+import { useState, useEffect } from 'react';
+import getGifs from './services/getGifs';
+
 import './App.css';
+import ListOfGifs from './components/ListOfGifs';
+
+
+
+
 
 function App() {
+  const [gifs, setGifs] = useState([]);
+
+  useEffect(function () {
+    getGifs({ keyword: 'panda' }).then(gifs => setGifs(gifs))
+  }, []);
+
+
+  
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ListOfGifs gifs={gifs} />
+      
+
+     
     </div>
   );
 }
