@@ -1,6 +1,6 @@
 
 import './App.css';
-import ListOfGifs from './components/ListOfGifs';
+import SearchResults from './pages/SearchResults';
 import Home from './pages/Home/index';
 import logo from './logo2.png';
 import { Link, Route } from "wouter";
@@ -20,7 +20,7 @@ function App() {
         path='/' />
         
         <Route path='/search/:keyword' 
-        component={ ListOfGifs } />
+        component={ SearchResults } />
       </section>
     </div>
   );
