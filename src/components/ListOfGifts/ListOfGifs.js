@@ -1,7 +1,7 @@
 import React from 'react';
 import Gif from "../Gif/Gif";
 
-import "./ListOfGifs.css";
+
 
 
 const ListOfGifs = ({ gifs }) => {
@@ -9,7 +9,7 @@ const ListOfGifs = ({ gifs }) => {
    
 
     return (
-      <div className="card">
+      <div>
         
         {gifs.map(({id, title, url}) => (
           <Gif 
